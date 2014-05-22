@@ -25,7 +25,7 @@ var StormFrontendGenerator = yeoman.generators.Base.extend({
         var prompts = [{
             type: 'confirm',
             name: 'someOption',
-            message: 'Would you like to enable this option?',
+            message: 'Ready to get started?',
             default: true
         }];
 
