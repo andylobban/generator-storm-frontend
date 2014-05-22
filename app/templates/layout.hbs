@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <title>{{title}} | {{site.title}}</title>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="cleartype" content="on">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--[if ! lte IE 8]><!-->
+            <link rel="stylesheet" media="not print" href="_/css/app.css" />
+        <!--<![endif]-->
+
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" media="screen" href="_/css/legacy.css" />
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <link rel="shortcut icon" href="Content/images/icons/favicon.ico" />
+        <link rel="apple-touch-icon" href="Content/images/icons/apple-touch-icon.png" />
+        <link rel="apple-touch-icon-precomposed" href="Content/images/icons/apple-touch-icon.png" />
+    </head>
+    <body>
+
+        {{> header }}
+        
+        {{> body }}
+        
+        {{> footer }}
+         
+    </body>
+</html>

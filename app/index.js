@@ -6,9 +6,10 @@ var yosay = require('yosay');
 var chalk = require('chalk');
 
 var StormFrontendGenerator = yeoman.generators.Base.extend({
+
     init: function () {
         this.pkg = require('../package.json');
-
+        
         this.on('end', function () {
             if (!this.options['skip-install']) {
                 this.installDependencies();
@@ -20,17 +21,17 @@ var StormFrontendGenerator = yeoman.generators.Base.extend({
         var done = this.async();
 
         // Have Yeoman greet the user.
-        this.log(yosay('Welcome to the StormFrontend generator.'));
+        this.log(yosay('Welcome to the Storm Frontend generator.'));
 
         var prompts = [{
-            type: 'confirm',
-            name: 'someOption',
-            message: 'Ready to get started?',
-            default: true
+            type: 'input',
+            name: 'projectName',
+            message: 'What do you want to call the project?',
+            default: this.appname || this.config.get('projectName')
         }];
 
         this.prompt(prompts, function (props) {
-            this.someOption = props.someOption;
+            this.projectName = props.projectName;
             
             done();
         }.bind(this));
@@ -38,8 +39,13 @@ var StormFrontendGenerator = yeoman.generators.Base.extend({
 
     app: function () {
         this.mkdir('app');
-        this.mkdir('app/templates');
-        
+        this.mkdir('app/_');
+        this.mkdir('app/templates/pages');
+        this.mkdir('app/templates/layouts');
+        this.mkdir('app/templates/partials');
+
+        this.copy('index.hbs', 'app/templates/layouts/index.hbs');
+        this.copy('layout.hbs', 'app/templates/layouts/default.hbs');
         this.copy('_package.json', 'package.json');
         this.copy('_bower.json', 'bower.json');
     },
