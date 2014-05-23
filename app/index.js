@@ -1,5 +1,5 @@
 'use strict';
-var util = require('util');
+var util = require('util')  ;
 var path = require('path');
 var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
@@ -44,8 +44,8 @@ var StormFrontendGenerator = yeoman.generators.Base.extend({
         this.mkdir('app/templates/layouts');
         this.mkdir('app/templates/partials');
         
-        this.copy('headr.hbs', 'app/templates/pages/header.hbs');
-        this.copy('footer.hbs', 'app/templates/pages/footer.hbs');
+        this.copy('header.hbs', 'app/templates/partials/header.hbs');
+        this.copy('footer.hbs', 'app/templates/partials/footer.hbs');
         this.copy('index.hbs', 'app/templates/pages/index.hbs');
         this.copy('layout.hbs', 'app/templates/layouts/default.hbs');
         this.copy('_package.json', 'package.json');
@@ -55,6 +55,8 @@ var StormFrontendGenerator = yeoman.generators.Base.extend({
     projectfiles: function () {
         this.copy('editorconfig', '.editorconfig');
         this.copy('jshintrc', '.jshintrc');
+        this.copy('Gruntfile.js', 'Gruntfile.js');
+        this.copy('gitignore', '.gitignore');
     }
 
 });
