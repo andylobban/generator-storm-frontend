@@ -5,6 +5,13 @@
         "gulp": "^3.6.0",
         "gulp-assemble": "~0.1.7",
         "gulp-load-plugins": "^0.5.0",
-        "gulp-ruby-sass": "^0.4.3"
+        "gulp-load-plugins": "^0.5.0",
+        "gulp-ruby-sass": "^0.4.3",
+        "gulp-livereload": "^1.2.0",
+        "connect": "^2.14.4",
+        "gulp-htmlmin": "~0.1.2",
+        "gulp-clean": "^0.2.4",
+        "connect-livereload": "^0.4.0",
+        "opn": "^0.1.1"
     }
 }

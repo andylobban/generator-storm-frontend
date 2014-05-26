@@ -23,6 +23,8 @@ var StormFrontendGenerator = yeoman.generators.Base.extend({
     },
 
     app: function () {
+        
+        // directories
         this.mkdir('app');
         this.mkdir('app/_');
         this.mkdir('app/_/images');
@@ -33,15 +35,16 @@ var StormFrontendGenerator = yeoman.generators.Base.extend({
         this.mkdir('app/templates/layouts');
         this.mkdir('app/templates/partials');
         
-        
+        // files
         this.copy('header.hbs', 'app/templates/partials/header.hbs');
         this.copy('footer.hbs', 'app/templates/partials/footer.hbs');
         this.copy('index.hbs', 'app/templates/pages/index.hbs');
         this.copy('sample-page.hbs', 'app/templates/pages/sample-page.hbs');
-        this.copy('layout.hbs', 'app/templates/layouts/default.hbs');
+        this.copy('default.hbs', 'app/templates/layouts/default.hbs');
         this.copy('app.scss', 'app/_/sass/app.scss');
         this.copy('_package.json', 'package.json');
         this.copy('_bower.json', 'bower.json');
+        
     },
 
     projectfiles: function () {
