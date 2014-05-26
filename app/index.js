@@ -18,35 +18,26 @@ var StormFrontendGenerator = yeoman.generators.Base.extend({
     },
 
     askFor: function () {
-        var done = this.async();
-
         // Have Yeoman greet the user.
-        this.log(yosay('Welcome to the Storm Frontend generator.'));
-
-        var prompts = [{
-            type: 'input',
-            name: 'projectName',
-            message: 'What do you want to call the project?',
-            default: this.appname || this.config.get('projectName')
-        }];
-
-        this.prompt(prompts, function (props) {
-            this.projectName = props.projectName;
-            
-            done();
-        }.bind(this));
+        this.log(yosay('Welcome to the Storm Frontend generator. ** Now with Gulp **'));
     },
 
     app: function () {
         this.mkdir('app');
         this.mkdir('app/_');
+        this.mkdir('app/_/images');
+        this.mkdir('app/_/js');
+        this.mkdir('app/_/css');
+        this.mkdir('app/_/sass');
         this.mkdir('app/templates/pages');
         this.mkdir('app/templates/layouts');
         this.mkdir('app/templates/partials');
         
+        
         this.copy('header.hbs', 'app/templates/partials/header.hbs');
         this.copy('footer.hbs', 'app/templates/partials/footer.hbs');
         this.copy('index.hbs', 'app/templates/pages/index.hbs');
+        this.copy('sample-page.hbs', 'app/templates/pages/sample-page.hbs');
         this.copy('layout.hbs', 'app/templates/layouts/default.hbs');
         this.copy('_package.json', 'package.json');
         this.copy('_bower.json', 'bower.json');
@@ -55,7 +46,7 @@ var StormFrontendGenerator = yeoman.generators.Base.extend({
     projectfiles: function () {
         this.copy('editorconfig', '.editorconfig');
         this.copy('jshintrc', '.jshintrc');
-        this.copy('Gruntfile.js', 'Gruntfile.js');
+        this.copy('gulpfile.js', 'gulpfile.js');
         this.copy('gitignore', '.gitignore');
     }
 
