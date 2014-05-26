@@ -1,19 +1,10 @@
 'use strict';
 
-var gulp = require('gulp');
-var assemble = require('gulp-assemble');
+var gulp = require('gulp'),
+    sass = require('gulp-ruby-sass');
 
-// Assemble 
-var assembleOptions = {
-  //data: 'data/*.json',
-  partials: 'templates/partials/*.hbs',
-  layoutdir: 'templates/layouts/'
-};
-
-gulp.task('assemble', function () {
-  gulp.src('templates/pages/*.hbs')
-    .pipe(assemble(assembleOptions))
-    .pipe(gulp.dest('_gh_pages/'));
+gulp.task('default', function () {
+    return gulp.src('app/_/sass/app.scss')
+        .pipe(sass({sourcemap: true}))
+        .pipe(gulp.dest('dist'));
 });
-
-gulp.task('default', ['assemble']);

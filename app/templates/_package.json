@@ -3,6 +3,8 @@
     "version": "0.1.0",
     "dependencies": {
         "gulp": "^3.6.0",
-        "gulp-assemble": "~0.1.7"
+        "gulp-assemble": "~0.1.7",
+        "gulp-load-plugins": "^0.5.0",
+        "gulp-ruby-sass": "^0.4.3"
     }
 }

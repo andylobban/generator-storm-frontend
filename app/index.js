@@ -39,6 +39,7 @@ var StormFrontendGenerator = yeoman.generators.Base.extend({
         this.copy('index.hbs', 'app/templates/pages/index.hbs');
         this.copy('sample-page.hbs', 'app/templates/pages/sample-page.hbs');
         this.copy('layout.hbs', 'app/templates/layouts/default.hbs');
+        this.copy('app.scss', 'app/_/sass/app.scss');
         this.copy('_package.json', 'package.json');
         this.copy('_bower.json', 'bower.json');
     },
