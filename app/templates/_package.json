@@ -2,6 +2,7 @@
     "name": "<%= _.slugify(appname) %>",
     "version": "0.1.0",
     "dependencies": {
-        "gulp": "^3.6.0"
+        "gulp": "^3.6.0",
+        "gulp-assemble": "~0.1.7"
     }
 }
