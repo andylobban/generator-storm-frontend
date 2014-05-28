@@ -61,11 +61,12 @@
         return gulp.src('app/_/js/**/*.js')
         .pipe(jshint('.jshintrc'))
         .pipe(jshint.reporter('default'))
-        .pipe(concat('main.js'))
+        .pipe(concat('app.js'))
         .pipe(gulp.dest('dist/_/js'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(uglify())
         .pipe(gulp.dest('dist/_/js'))
+        .pipe(gulp.dest('app/_/js'))
         .pipe(notify({ message: 'Scripts task complete' }));
     });
 
