@@ -19,5 +19,12 @@
 	width:device-width
 	}
 
+@import "mixins";
+
 @import "utils";
-@import "../../bower_components/storm-base-css/base";
+
+@import "base";
+
+@import "grid";
+
+@import "globals";
